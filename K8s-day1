@@ -1,6 +1,6 @@
 Difference between docker and k8s ?
 
-Basically docker is an containerization platform where as k8s is container orchestration. 
+Basically, Docker is a containerization platform, whereas Kubernetes (K8s) is a container orchestration platform.
 
 There are mainly four issues that we face with docker are 
 1)Single host 2)Auto scaling 3)Auto healing 4)Simple mechanism
