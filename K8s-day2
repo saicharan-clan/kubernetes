@@ -1,0 +1,42 @@
+ARCHITECTURE OF K8S
+
+Control Plane vs Data Plane
+-> The Control Plane can be referred to as the master node.
+-> The Data Plane can be referred to as the worker node.
+
+Each plane has specific components
+-> Control Plane  1) Core or API server
+                  2) Scheduler
+                  3) ETCD
+                  4) Control Manager
+                  5) CCM (Cloud Control Manager)
+
+-> Data Plane     1) Kubelete
+                  2) Kube Proxy
+                  3) Container Runtime
+
+-> In k8s simplest thing or smallest deployble unit is known as pod
+
+CONTRO PLANE:
+
+Core or API Server: The API server is responsible for exposing Kubernetes to the external world. It handles communication between components, but the decision of which node a pod should be scheduled on is made 
+by the Scheduler.
+
+Scheduler: It schedules on which node the pod needs to be installed. The API server provides information about the available nodes, and the scheduler acts on that information.
+
+ETCD: ETCD is a distributed key-value store that stores the entire cluster's configuration data, state, and metadata, ensuring that the Kubernetes cluster can maintain its desired state.
+
+Control Manager: To support scaling in Kubernetes, we use a ReplicaSet. The Controller Manager is responsible for managing this ReplicaSet through the ReplicaSet Controller. It also manages inbuild controllers in
+k8s
+
+CCM (Cloud Controller Manager): When creating resources using Kubernetes, it doesn’t know which cloud provider to use. Therefore, we write the required cloud provider code in the CCM. And it is the opensource tool
+if k8s running on onpremise there is no need of ccm
+
+DATA PLANE:
+
+Kubelet: It is responsible for managing whether a pod is running correctly or not.
+
+Kube Proxy: It is responsible for facilitating communication within the cluster and with external clients.
+
+Container Runtime: It is responsible for running containers, which are the building blocks of pods.
+
