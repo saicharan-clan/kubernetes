@@ -1,0 +1,34 @@
+Difference between docker and k8s ?
+
+Basically docker is an containerization platform where as k8s is container orchestration. 
+
+There are mainly four issues that we face with docker are 
+1)Single host 2)Auto scaling 3)Auto healing 4)Simple mechanism
+
+1) SINGLE HOST: We are launching 100 containers on a single host with 4 CPUs and 4 GB of RAM. However, if one container consumes more resources, other containers may fail or stop working due to a lack of resources. 
+   This is the issue we are facing with a single host.
+
+2) AUTO SCALING: If the load suddenly increases in one container, it cannot scale automatically; we need to do it manually.
+
+3) AUTO HEALING: We know that containers are ephemeral in nature, meaning they are short-lived. Once the process is completed, they stop running. If a container crashes or stops working for some reason, 
+   the application running inside the container becomes inaccessible. As a result, users who are using this application may face issues because Docker containers cannot heal automatically.
+
+4) SIMPLE MECHANISM: Basically, Docker containers are not an enterprise-level platform and are typically not used in production environments. Due to their simplicity, Docker containers alone are not ideal for 
+   production use. Docker containers can be used in production environments, but they typically require additional tools and platforms, like orchestration and management layers (e.g., Docker Swarm, Kubernetes),
+   to handle the complexities of production workloads.
+
+All this four issues have overcome by k8's it solved all the problems related to single host, auto scaling, auto healing and simple mechansism. So most of the organizations are using k8's.
+
+-> By default, Kubernetes (K8s) is cluster-based in nature. A cluster is a group of nodes, consisting of master and worker nodes. For practice purposes, we can use a single master node and a single worker node. 
+   However, in a production environment, Kubernetes is typically installed on multiple master and worker nodes. The master node handles requests and passes them to the worker nodes.
+
+1) SINGLE HOST: Kubernetes (K8s) has the smallest deployable unit known as a pod, and inside the pod, we have containers(which holds the application). These pods are deployed on nodes. If a pod lacks resources, 
+   it can be shifted to another node.
+
+2) AUTO SCALING: Kubernetes (K8s) uses YAML files for configuration. If the load suddenly increases, a Horizontal Pod Autoscaler (HPA) can be configured to scale the application automatically
+   You can set it to scale when the load reaches 80% or we can use replica sets.
+
+3) AUTO HEALING: Whenever a container goes down, a new container is automatically created. With the help of the API server, Kubernetes detects when a container has stopped and recreates it to ensure continuity
+
+4) SIMPLE MECHANISM: Kubernetes (K8s) is an enterprise-level platform that includes features like load balancers, firewalls, auto-scaling, auto-healing, and gateways, making it highly suitable for 
+   production environments. As a result, many organizations are shifting to Kubernetes
