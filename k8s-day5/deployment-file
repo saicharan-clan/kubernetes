@@ -1,0 +1,16 @@
+More or less, a pod is similar to a Docker container, but the main reasons most organizations have shifted to Kubernetes are due to its auto-scaling and auto-healing features. 
+These capabilities are not provided by pods alone.
+
+Auto-scaling and auto-healing can be achieved by using deployments, so in Kubernetes, we do not directly deploy pods; we create or deploy them using deployment resources
+
+Basically, a deployment creates replica sets, which in turn create pods that run on nodes. In the deployment file, we specify the number of replica pods. 
+The replica set ensures that the desired number of pods are running on the nodes
+
+As we know, the ReplicaSet is a Kubernetes controller that manages and ensures that the desired state defined in the deployment.yaml file matches the actual state on the nodes
+A Deployment does not handle everything itself rather, it relies on a ReplicaSet to manage tasks such as auto-scaling and self-healing. If the replica count changes, the ReplicaSet ensures that the specified 
+number of replica pods are running across the nodes
+
+For example, if we specify 100 replica pods in the deployment.yaml file and one replica pod gets deleted, the ReplicaSet ensures that a new pod is created before termination, 
+as its duty is to ensure that the desired state defined in the deployment.yaml file matches the actual state on the nodes
+
+***************please refer to deployment.yaml file that i have created in this folder and try to perform that practical****************
