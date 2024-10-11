@@ -5,4 +5,4 @@ Pods: More or less, pods are similar to Docker containers, but in pods, we can h
 
 If we observe, both containers and pods are similar, but there are slight differences between them. However, neither of them can solve auto-scaling and auto-healing issues.
 
-Deployments: Actual Hero of k8s that solves both auto healing and auto scaling.
+Deployments: Actual Hero of k8s that solves both auto healing and auto scaling problem.
