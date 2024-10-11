@@ -1,0 +1,8 @@
+Container: It can be created using any containerization platform. For example, in my case, I used Docker. We just need to use the docker run command in the command line interface, 
+and the container will be created, allowing us to access the application or process inside the container
+
+Pods: More or less, pods are similar to Docker containers, but in pods, we can have one or more containers that are tightly coupled and share the same network.
+
+If we observe, both containers and pods are similar, but there are slight differences between them. However, neither of them can solve auto-scaling and auto-healing issues.
+
+Deployments: Actual Hero of k8s that solves both auto healing and auto scaling.
