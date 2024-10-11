@@ -32,7 +32,7 @@ Steps to Install Minikube on Ubuntu
 by default when we use minikube start command it takes docker as vm assuming Docker is installed and available on your system. Minikube supports 
 multiple drivers (VMs), including Docker, VirtualBox, and others, but Docker is the default driver if it's available. It creates single node k8s cluster but in 
 production or real time we use multiple nodes
-7) sudo usermod -aG docker $USER (Run this command)
+7) sudo usermod -aG docker $USER (Run this command) and relogin into vm
 8) minikube start  --driver=docker or just use minikube start
 
 
