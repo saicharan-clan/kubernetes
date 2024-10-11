@@ -1,3 +1,6 @@
+# AUTHOR: SAI CHARAN
+# DATE: 11-10-2024
+
 More or less, a pod is similar to a Docker container, but the main reasons most organizations have shifted to Kubernetes are due to its auto-scaling and auto-healing features. 
 These capabilities are not provided by pods alone.
 
