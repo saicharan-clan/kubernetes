@@ -1,0 +1,18 @@
+# I have taken this code form kubernetes pod documentation
+# create vim pod.yaml (and paste this code in file)
+# kubectl apply -f pod.yml
+# check pods ( kubectl get pods -o wide )
+# check modes ( kubectl get nodes )
+# to access the app in the pod we need to run minikube ssh and then execute curl pod ip
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+
