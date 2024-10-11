@@ -1,0 +1,30 @@
+# create vim deployement.yaml and paste this code
+# kubectl apply -f deployment.yaml
+# you will see magic here
+# execute this commands 1) kubectl get nodes 2) kubectl get pods 3) kubectl get rs (rs = replica set)
+# i did not create any replica set or anything i just created deployment.yaml file it has taken care of evrything
+# now open another terminal in first terminal use (kubectl delete pod podname) and in second terminal run kubectl get pods -w (-w = you can watch pods live) after 
+# executing second terminal command run first terminal command you will see the magic
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
