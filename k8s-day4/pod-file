@@ -1,0 +1,19 @@
+DEPLOYING THE FIRST APPLICATION IN K8S
+
+Nowadays, most organizations use Kubernetes for four main reasons that I have already mentioned in the Day 1 and Day 2 files: 
+1) scalability 2) self-healing 3) clustering 4) enterprise-grade features
+
+In Kubernetes, pods are the smallest deployable units. We do not directly deploy containers; instead, we deploy pods, which can contain one or more containers. 
+Pods define how containers should run including their resources, networking, and storage
+
+A Pod in Kubernetes is similar to the docker run command we execute in the Docker CLI. In Kubernetes, we specify the container configurations and other parameters in a pod.yaml file. 
+A Pod can contain one or more containers, although it often includes multiple containers that are tightly coupled and share the same network namespace. In Kubernetes, we manage all resources using YAML files 
+to define their desired state.
+
+Kubernetes creates a Cluster IP for the Pod; it does not create an IP for each container. If we want to access the application in a container, we need to use the Pod IP.
+is my statement technically correct
+
+And you need not worry about creating the pod.yaml file because you can always refer to the documentation. You should know where to make updates; the structure of the YAML file remains the same, 
+but the values may change based on your specific requirements
+
+So pod is nothing but a specfication to define how to run a container
