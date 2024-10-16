@@ -14,7 +14,6 @@ A Pod can contain one or more containers, although it often includes multiple co
 to define their desired state.
 
 Kubernetes creates a Cluster IP for the Pod; it does not create an IP for each container. If we want to access the application in a container, we need to use the Pod IP.
-is my statement technically correct
 
 And you need not worry about creating the pod.yaml file because you can always refer to the documentation. You should know where to make updates; the structure of the YAML file remains the same, 
 but the values may change based on your specific requirements
