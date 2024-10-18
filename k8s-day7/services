@@ -1,0 +1,24 @@
+# Author: Sai Charan
+# Date: 18-10-2024
+
+-> Kubernetes services are an important concept that addresses the issues we face with deployments and pods. By default, pods and deployments do not come with load balancers. However, Kubernetes services 
+(such as ClusterIP, NodePort, and LoadBalancer) provide ways to expose applications and manage load balancing among pods.Kubernetes follows dynamic IP allocation, meaning that when a pod is deleted or crashes, it is 
+recreated with a new IP address. If a user accesses the application using the old pod's IP address, they will not be aware of the new IP. As a result, attempts to access the application with the old pod IP will fail.
+By default, pods use the cluster network. While we can access applications within the cluster using ClusterIP services, this does not allow access from outside the cluster. Services such as NodePort and LoadBalancer 
+enable external access, making it easier to balance the load across multiple pods. Furthermore, since pods and deployments do not provide built-in load balancing, it is necessary to use Kubernetes 
+services to balance the load among them effectively
+
+-> So there are three issues from pods and deployments
+1) Load balancing 2)service discovery 3)expose
+
+1)Load Balancing: Kubernetes services provide load balancing functionality, which can be considered a basic form of load balancing. By default, it uses a round-robin method for distributing incoming requests. 
+For example, if we have six requests and three replica pods, the service typically distributes two requests to each pod.
+
+2)Service Discovery: As I discussed in deployments, if a pod gets deleted, it is recreated with a new IP address. This can be a problem for users who are unaware of this change and are trying to access the application using 
+the old IP. so, services looks for labels and selectors instead of ip because even if pod is recreated it will come with same label and selector.
+
+3)Expose: Basically we expose the apps using cluster ip, node port, load balancing
+cluster-ip: we can access the app within in the cluster
+node port: we can access the app using node ip for that we should need access for node ip or should be same network we can in same organization
+load balancing: LoadBalancer: This allows us to access the application from outside the cluster. For this, we need a public IP address. While LoadBalancer services are commonly used in cloud environments 
+to automatically provision public IPs, load balancing can also be implemented in on-premises Kubernetes clusters using external load balancers. whther it is node port or load balancer cluster ip is present
