@@ -1,0 +1,17 @@
+# Author SAI CHARAN
+#DATE 20-10-20224
+
+Ingress is used for external exposure of application. Service was doing Load balancing, Service discovery, and exposure
+But there are are some issues with services with loadbalancer
+The two issues that we are facing with load balancer was 1) In services we use basic load balancer which works on round robin mechanism 2) We need to pay for static public ip of load balancer for one lb it's fine for
+paying but we have if we have 100 or more swervices in load balancer mode we need to pay for ip address of lb because they are static
+
+Basically in previous days or before 5 to 10 years people basically used legacy systems before containers where they deploy the application on the server where they have only one lb with use of one lb we can deploy 
+multiple application and it is a enterprise level load balancer and we need to pay for only one static ip. But as the containers came to picture most of organizations shifted from vm's to containers. Everything was
+fine but the organizations found issue with load balancers. And it came to the k8's notice so they introduced ingress controller to solve this issue.
+
+So to overcome this issues we are using ingress or ingress controller. Ingress controller is nothing but a load balancer it is a enterprise load balancer which provides sticky session, rato based, path, domain,
+white-listing, black-listing this are not supported by k8's load balancers. So as a user we need create ingress resources we need to specify all the requiremnets like path, domain etc in k8's cluster. And ingress
+controllers are created by loadbalancer companies and ther provided in their github account and they also provide installation steps based on our requirements we need to select the load balancers and deploy them in 
+our cluster and this ingress controller will look for ingress resources and implements the all the requirements that are presented in ingress resources. One ingress controller can be used for multiple services.
+And we cannot use ingress resource without ingress controller.
