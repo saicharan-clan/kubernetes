@@ -1,0 +1,21 @@
+#Author: SAI CHARAN
+#Date: 20-10-2024
+
+RBAC(Role Based ACCESS Controller)
+
+Whenever we create secrets, we use RBAC (Role-Based Access Control) because the principle of least privilege allows us to restrict access to the secrets effectively.
+
+RBAC is directly related to security and is classified into two types: 1) Users and 2) Service Accounts.
+
+User: Defines the access a user should have on the cluster to prevent actions like deletion and overwriting.
+
+Service Accounts: Similar to user management, service accounts allow us to manage the access of services or resources, such as pods and deployments, that are running in the cluster.
+
+In Kubernetes, there are three components for managing RBAC: 1) User/Service Accounts, 2) Role, and 3) Role Binding.
+
+Role: Specifies what access a user or service account should have.
+
+Role Binding: Used to attach roles to users and manage service accounts.
+
+Roles handle permissions, while role bindings manage the assignment of those permissions."
+is my statement is technically correct
