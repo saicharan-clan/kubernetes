@@ -1,17 +1,25 @@
 # Author SAI CHARAN
 #DATE 20-10-20224
 
-Ingress is used for external exposure of application. Service was doing Load balancing, Service discovery, and exposure
-But there are are some issues with services with loadbalancer
-The two issues that we are facing with load balancer was 1) In services we use basic load balancer which works on round robin mechanism 2) We need to pay for static public ip of load balancer for one lb it's fine for
-paying but we have if we have 100 or more swervices in load balancer mode we need to pay for ip address of lb because they are static
+Ingress is used for the external exposure of applications. Services handle load balancing, service discovery, and exposure. However, we are facing two issues with load balancers:
+In services, we use a basic load balancer, which operates on a round-robin mechanism.We need to pay for the static public IP of the load balancer. For one load balancer, this is manageable, but if we have 100 or 
+more services in load balancer mode, we will need to pay for the IP addresses of each load balancer because they are static. 
 
-Basically in previous days or before 5 to 10 years people basically used legacy systems before containers where they deploy the application on the server where they have only one lb with use of one lb we can deploy 
-multiple application and it is a enterprise level load balancer and we need to pay for only one static ip. But as the containers came to picture most of organizations shifted from vm's to containers. Everything was
-fine but the organizations found issue with load balancers. And it came to the k8's notice so they introduced ingress controller to solve this issue.
+Basically, in the past, around 5 to 10 years ago, people primarily used legacy systems before containers, where applications were deployed on servers. In those systems, they had only one load balancer (LB),
+and with that single LB, multiple applications could be deployed. It was an enterprise-level load balancer, and only one static IP was required. However, with the introduction of containers, most organizations 
+shifted from VMs to containers. Initially, everything seemed fine, but organizations encountered issues with load balancers. This problem was brought to Kubernetes' attention, leading to the introduction of the 
+Ingress controller to address this issue.
 
-So to overcome this issues we are using ingress or ingress controller. Ingress controller is nothing but a load balancer it is a enterprise load balancer which provides sticky session, rato based, path, domain,
-white-listing, black-listing this are not supported by k8's load balancers. So as a user we need create ingress resources we need to specify all the requiremnets like path, domain etc in k8's cluster. And ingress
-controllers are created by loadbalancer companies and ther provided in their github account and they also provide installation steps based on our requirements we need to select the load balancers and deploy them in 
-our cluster and this ingress controller will look for ingress resources and implements the all the requirements that are presented in ingress resources. One ingress controller can be used for multiple services.
-And we cannot use ingress resource without ingress controller.
+Ingress controller acts as a load balancer with advanced features like sticky sessions, rate-based routing, path-based routing, domain-based routing, whitelisting, and blacklisting—features that are not natively 
+supported by Kubernetes' default load balancers.
+
+The explanation about users needing to create Ingress resources specifying paths, domains, and other routing rules is accurate. Ingress resources define the routing, while the Ingress controller implements them.
+Ingress Controller Providers:
+
+It’s correct that different companies develop Ingress controllers, and they provide installation instructions (typically hosted on platforms like GitHub). Users can choose a suitable Ingress controller (such as NGINX, HAProxy, or Traefik) based on their requirements.
+One Ingress Controller for Multiple Services:
+
+one Ingress controller can manage multiple services by routing traffic to different services based on the rules defined in the Ingress resources.
+Dependency on Ingress Controller:
+
+It’s accurate to say that Ingress resources depend on an Ingress controller. Without the controller, the Ingress resources will not function.
