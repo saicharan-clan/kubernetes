@@ -13,11 +13,9 @@ Ingress controller to address this issue.
 Ingress controller acts as a load balancer with advanced features like sticky sessions, rate-based routing, path-based routing, domain-based routing, whitelisting, and blacklisting—features that are not natively 
 supported by Kubernetes' default load balancers.
 
-The explanation about users needing to create Ingress resources specifying paths, domains, and other routing rules is accurate. Ingress resources define the routing, while the Ingress controller implements them.
-Ingress Controller Providers:
+users will create Ingress resources specifying paths, domains, and other routing rules. Ingress resources define the routing, while the Ingress controller implements them.
 
-It’s correct that different companies develop Ingress controllers, and they provide installation instructions (typically hosted on platforms like GitHub). Users can choose a suitable Ingress controller (such as NGINX, HAProxy, or Traefik) based on their requirements.
-One Ingress Controller for Multiple Services:
+Different companies develop Ingress controllers, and they provide installation instructions (typically hosted on platforms like GitHub). Users can choose a suitable Ingress controller (such as NGINX, HAProxy, or Traefik) based on their requirements.
 
 one Ingress controller can manage multiple services by routing traffic to different services based on the rules defined in the Ingress resources.
 Dependency on Ingress Controller:
