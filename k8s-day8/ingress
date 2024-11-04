@@ -18,6 +18,6 @@ users will create Ingress resources specifying paths, domains, and other routing
 Different companies develop Ingress controllers, and they provide installation instructions (typically hosted on platforms like GitHub). Users can choose a suitable Ingress controller (such as NGINX, HAProxy, or Traefik) based on their requirements.
 
 one Ingress controller can manage multiple services by routing traffic to different services based on the rules defined in the Ingress resources.
-Dependency on Ingress Controller:
 
+Dependency on Ingress Controller:
 It’s accurate to say that Ingress resources depend on an Ingress controller. Without the controller, the Ingress resources will not function.
