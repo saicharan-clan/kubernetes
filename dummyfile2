@@ -1,0 +1,21 @@
+apiVersion: v1  # Specifies the API version for the Service resource (v1 is the stable version for Services)
+kind: Service    # Defines the resource type as a Service
+metadata:
+  name: my-service  # The name of the Service, used to reference it within the Kubernetes cluster
+spec:
+  selector:
+    app.kubernetes.io/name: MyApp  # The selector defines which Pods this Service will target by matching the label 'app.kubernetes.io/name' with the value 'MyApp'. The Service will route traffic to those Pods.
+  
+  # Ports section defines how the Service communicates with the Pods
+  ports:
+    - protocol: TCP  # Specifies that the Service will use TCP as the transport protocol
+      port: 80       # The port on which the Service will expose itself. External clients will connect to this port
+      targetPort: 9376  # The port inside the Pod that the Service will forward traffic to. This is the port the Pod is listening on.
+  
+  clusterIP: 10.0.171.239  # This is the IP address assigned to the Service within the cluster. Kubernetes assigns this IP to the Service so that it can be accessed by other Pods within the cluster.
+  type: LoadBalancer  # Specifies that the Service will be exposed externally using a cloud provider's load balancer (e.g., AWS ELB or GCP LB). This type is used for exposing services to the outside world.
+
+status:
+  loadBalancer:
+    ingress:
+      - ip: 192.0.2.127  # The external IP address provided by the LoadBalancer for accessing the Service from outside the Kubernetes cluster. In this example, it's a mock IP used for illustration.
