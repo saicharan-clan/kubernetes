@@ -20,6 +20,14 @@ Alternatively: Install kubectl using Snap
 1) sudo snap install kubectl --classic
 2) kubectl version --client
 
+  Install eksctl 
+
+1) curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+
+2) sudo mv /tmp/eksctl /usr/local/bin
+
+3) eksctl version
+
 
 Steps to Install Minikube on Ubuntu
 
