@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx  # This label identifies and manages the Deployment resource
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx  # This ensures that the Deployment manages Pods with this label
+  template:
+    metadata:
+      labels:
+        app: nginx  # This label is applied to the Pods created by the Deployment
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
