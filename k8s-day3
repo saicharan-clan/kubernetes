@@ -10,10 +10,10 @@ INSTALLING KUBERNETES
 
 Steps to Install kubectl on Ubuntu
 
-1) curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
-2) chmod +x ./kubectl
-3) sudo mv ./kubectl /usr/local/bin/kubectl
-4) kubectl version --client
+ curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+ chmod +x ./kubectl
+ sudo mv ./kubectl /usr/local/bin/kubectl
+ kubectl version --client
 
 Alternatively: Install kubectl using Snap
 
@@ -31,17 +31,17 @@ Alternatively: Install kubectl using Snap
 
 Steps to Install Minikube on Ubuntu
 
-1) sudo apt update
-2) sudo apt upgrade -y
-3) sudo apt install -y curl apt-transport-https
-4) curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-5) sudo install minikube-linux-amd64 /usr/local/bin/minikube
-6) minikube version
+ sudo apt update
+ sudo apt upgrade -y
+ sudo apt install -y curl apt-transport-https
+ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+ minikube version
 by default when we use minikube start command it takes docker as vm assuming Docker is installed and available on your system. Minikube supports 
 multiple drivers (VMs), including Docker, VirtualBox, and others, but Docker is the default driver if it's available. It creates single node k8s cluster but in 
 production or real time we use multiple nodes use this command to install docker (sudo apt install docker.io -y)
-7) sudo usermod -aG docker $USER (Run this command) and relogin into vm
-8) minikube start  --driver=docker or just use minikube start
+ sudo usermod -aG docker $USER (Run this command) and relogin into vm
+ minikube start  --driver=docker or just use minikube start
 
 
 
