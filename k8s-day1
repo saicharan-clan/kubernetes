@@ -29,7 +29,7 @@ All this four issues have overcome by k8's it solved all the problems related to
    it can be shifted to another node.
 
 2) AUTO SCALING: Kubernetes (K8s) uses YAML files for configuration. If the load suddenly increases, a Horizontal Pod Autoscaler (HPA) can be configured to scale the application automatically
-   You can set it to scale when the load reaches 80% or we can use replica sets.
+   You can set it to scale when the load reaches 80%.
 
 3) AUTO HEALING: Whenever a container goes down, a new container is automatically created. With the help of the API server, Kubernetes detects when a container has stopped and recreates it to ensure continuity
 
