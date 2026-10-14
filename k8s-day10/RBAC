@@ -17,5 +17,4 @@ Role: Specifies what access a user or service account should have.
 
 Role Binding: Used to attach roles to users and manage service accounts.
 
-Roles handle permissions, while role bindings manage the assignment of those permissions."
-is my statement is technically correct
+Roles handle permissions, while role bindings manage the assignment of those permissions.
